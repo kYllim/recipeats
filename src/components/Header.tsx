@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Search from '@/components/Search';
+
 
 export default function Header() {
   return (
@@ -9,6 +11,7 @@ export default function Header() {
         </Link>
 
         <div className="flex-1 max-w-md">
+            <Search placeholder="Rechercher une recette..." />
         </div>
 
         <div className="hidden md:block w-32" /> 

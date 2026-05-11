@@ -1,7 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import RecipeCard from "@/components/RecipeCard";
+import RecipeCard from "@/components/recipes/RecipeCard";
 
-export default async function HomePage() {
+export default async function RecipeList() {
+  
   const recipes = await prisma.recipe.findMany({
     orderBy: { createdAt: 'desc' },
   });
