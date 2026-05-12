@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "favorites": "My Favorites",
+    "addRecipe": "Add a recipe"
+  },
+  "home": {
+    "hero": "Discover delicious recipes",
+    "subtitle": "Share, comment and save your favorite dishes",
+    "cta": "Explore recipes"
+  },
+  "recipes": {
+    "title": "All Recipes",
+    "search": "Search for a recipe...",
+    "filterTime": "Prep time",
+    "filterDifficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "minutes": "min",
+    "noResults": "No recipes found",
+    "ingredients": "Ingredients",
+    "instructions": "Steps",
+    "prepTime": "Prep time"
+  },
+  "comments": {
+    "title": "Comments",
+    "add": "Leave a review",
+    "author": "Your name",
+    "authorPlaceholder": "e.g. Mary",
+    "content": "Your comment",
+    "contentPlaceholder": "Share your experience with this recipe...",
+    "rating": "Rating",
+    "submit": "Publish",
+    "submitting": "Publishing...",
+    "empty": "Be the first to comment on this recipe!",
+    "success": "Your comment has been published!",
+    "error": "Something went wrong, please try again.",
+    "on": "on",
+    "validation": {
+      "authorMin": "Name must be at least 2 characters",
+      "authorMax": "Name cannot exceed 50 characters",
+      "contentMin": "Comment must be at least 10 characters",
+      "contentMax": "Comment cannot exceed 500 characters",
+      "ratingRequired": "Please give a rating"
+    }
+  },
+  "favorites": {
+    "title": "My Favorites",
+    "empty": "You have no favorite recipes yet",
+    "emptyAction": "Discover recipes",
+    "added": "Recipe added to favorites!",
+    "removed": "Recipe removed from favorites"
+  },
+  "errors": {
+    "404": {
+      "title": "Page not found",
+      "description": "Oops! The page you're looking for doesn't exist or has been moved.",
+      "action": "Back to home"
+    },
+    "500": {
+      "title": "Server error",
+      "description": "Something went wrong on our end. Please try again.",
+      "action": "Try again"
+    }
+  },
+  "meta": {
+    "siteName": "RecipEats",
+    "homeTitle": "RecipEats — Shared Recipes",
+    "homeDescription": "Discover and share delicious cooking recipes on RecipEats.",
+    "favoritesTitle": "My Favorites — RecipEats",
+    "favoritesDescription": "Find all your saved favorite recipes on RecipEats.",
+    "404Title": "Page not found — RecipEats",
+    "500Title": "Error — RecipEats"
+  },
+  "addRecipe": {
+    "title": "Add a recipe",
+    "subtitle": "Share your creation with the RecipEats community.",
+    "fields": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Carbonara Pasta",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe your dish in a few words...",
+      "prepTime": "Prep time (min)",
+      "difficulty": "Difficulty",
+      "instructions": "Cooking steps",
+      "instructionsPlaceholder": "1. Boil water...\n2. Cook the pasta...",
+      "image": "Image (optional)",
+      "ingredients": "Ingredients",
+      "ingredientName": "Name",
+      "ingredientQuantity": "Qty",
+      "ingredientUnit": "Unit"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "actions": {
+      "addIngredient": "+ Add an ingredient",
+      "removeIngredient": "Remove",
+      "submit": "Create recipe",
+      "submitting": "Creating..."
+    },
+    "validation": {
+      "titleMin": "Title must be at least 3 characters",
+      "titleMax": "Title cannot exceed 100 characters",
+      "descriptionMin": "Description must be at least 10 characters",
+      "descriptionMax": "Description cannot exceed 500 characters",
+      "prepTimeInvalid": "Please enter a valid time in minutes",
+      "instructionsMin": "Steps must be at least 10 characters",
+      "ingredientsMin": "Add at least one ingredient",
+      "ingredientName": "Name required",
+      "ingredientQuantity": "Positive quantity required",
+      "ingredientUnit": "Unit required",
+      "imageType": "Invalid format (JPG, PNG, WEBP)",
+      "imageSize": "Image must be under 5 MB"
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again."
+    }
+  }
+}

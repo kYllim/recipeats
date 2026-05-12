@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "favorites": "Mes Favoris",
+    "addRecipe": "Ajouter une recette"
+  },
+  "home": {
+    "hero": "Découvrez des recettes savoureuses",
+    "subtitle": "Partagez, commentez et sauvegardez vos plats préférés",
+    "cta": "Explorer les recettes"
+  },
+  "recipes": {
+    "title": "Toutes les recettes",
+    "search": "Rechercher une recette...",
+    "filterTime": "Temps de préparation",
+    "filterDifficulty": "Difficulté",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "minutes": "min",
+    "noResults": "Aucune recette trouvée",
+    "ingredients": "Ingrédients",
+    "instructions": "Étapes",
+    "prepTime": "Temps de préparation"
+  },
+  "comments": {
+    "title": "Commentaires",
+    "add": "Laisser un avis",
+    "author": "Votre prénom",
+    "authorPlaceholder": "Ex: Marie",
+    "content": "Votre commentaire",
+    "contentPlaceholder": "Partagez votre expérience avec cette recette...",
+    "rating": "Note",
+    "submit": "Publier",
+    "submitting": "Publication...",
+    "empty": "Soyez le premier à commenter cette recette !",
+    "success": "Votre commentaire a été publié !",
+    "error": "Une erreur est survenue, veuillez réessayer.",
+    "on": "le",
+    "validation": {
+      "authorMin": "Le prénom doit contenir au moins 2 caractères",
+      "authorMax": "Le prénom ne peut pas dépasser 50 caractères",
+      "contentMin": "Le commentaire doit contenir au moins 10 caractères",
+      "contentMax": "Le commentaire ne peut pas dépasser 500 caractères",
+      "ratingRequired": "Veuillez attribuer une note"
+    }
+  },
+  "favorites": {
+    "title": "Mes Favoris",
+    "empty": "Vous n'avez pas encore de recettes favorites",
+    "emptyAction": "Découvrir des recettes",
+    "added": "Recette ajoutée aux favoris !",
+    "removed": "Recette retirée des favoris"
+  },
+  "errors": {
+    "404": {
+      "title": "Page introuvable",
+      "description": "Oups ! La page que vous cherchez n'existe pas ou a été déplacée.",
+      "action": "Retour à l'accueil"
+    },
+    "500": {
+      "title": "Erreur serveur",
+      "description": "Quelque chose s'est mal passé de notre côté. Veuillez réessayer.",
+      "action": "Réessayer"
+    }
+  },
+  "meta": {
+    "siteName": "RecipEats",
+    "homeTitle": "RecipEats — Recettes partagées",
+    "homeDescription": "Découvrez et partagez des recettes de cuisine délicieuses sur RecipEats.",
+    "favoritesTitle": "Mes Favoris — RecipEats",
+    "favoritesDescription": "Retrouvez toutes vos recettes favorites sauvegardées sur RecipEats.",
+    "404Title": "Page introuvable — RecipEats",
+    "500Title": "Erreur — RecipEats"
+  },
+  "addRecipe": {
+    "title": "Ajouter une recette",
+    "subtitle": "Partagez votre création avec la communauté RecipEats.",
+    "fields": {
+      "title": "Titre",
+      "titlePlaceholder": "Ex : Pâtes Carbonara",
+      "description": "Description",
+      "descriptionPlaceholder": "Décrivez votre plat en quelques mots...",
+      "prepTime": "Temps de préparation (min)",
+      "difficulty": "Difficulté",
+      "instructions": "Étapes de préparation",
+      "instructionsPlaceholder": "1. Faire bouillir l'eau...\n2. Cuire les pâtes...",
+      "image": "Image (optionnel)",
+      "ingredients": "Ingrédients",
+      "ingredientName": "Nom",
+      "ingredientQuantity": "Qté",
+      "ingredientUnit": "Unité"
+    },
+    "difficulty": {
+      "easy": "Facile",
+      "medium": "Moyen",
+      "hard": "Difficile"
+    },
+    "actions": {
+      "addIngredient": "+ Ajouter un ingrédient",
+      "removeIngredient": "Retirer",
+      "submit": "Créer la recette",
+      "submitting": "Création en cours..."
+    },
+    "validation": {
+      "titleMin": "Le titre doit faire au moins 3 caractères",
+      "titleMax": "Le titre ne peut pas dépasser 100 caractères",
+      "descriptionMin": "La description doit faire au moins 10 caractères",
+      "descriptionMax": "La description ne peut pas dépasser 500 caractères",
+      "prepTimeInvalid": "Entrez un temps en minutes valide",
+      "instructionsMin": "Les étapes doivent faire au moins 10 caractères",
+      "ingredientsMin": "Ajoutez au moins un ingrédient",
+      "ingredientName": "Nom requis",
+      "ingredientQuantity": "Quantité positive requise",
+      "ingredientUnit": "Unité requise",
+      "imageType": "Format invalide (JPG, PNG, WEBP)",
+      "imageSize": "L'image doit faire moins de 5 Mo"
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
+  }
+}
