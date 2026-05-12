@@ -8,7 +8,13 @@
   "home": {
     "hero": "Discover delicious recipes",
     "subtitle": "Share, comment and save your favorite dishes",
-    "cta": "Explore recipes"
+    "cta": "Explore recipes",
+    "featuredTitle": "Latest Gems",
+    "featuredSubtitle": "Discover the most recent recipes shared by the community.",
+    "statsTitle": "Community in Numbers",
+    "recipesCount": "Shared Recipes",
+    "usersCount": "Foodies",
+    "commentsCount": "Reviews Published"
   },
   "recipes": {
     "title": "All Recipes",

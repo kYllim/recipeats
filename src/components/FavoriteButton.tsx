@@ -34,14 +34,24 @@ export function FavoriteButton({ recipeId, recipeTitle, t, minimal }: FavoriteBu
         type="button"
         onClick={handleClick}
         className={[
-          "absolute top-3 right-3 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all",
-          "backdrop-blur-md shadow-lg",
+          "absolute top-4 right-4 z-10 w-11 h-11 rounded-2xl flex items-center justify-center transition-all group",
+          "backdrop-blur-xl shadow-xl",
           active 
-            ? "bg-rose-500 text-white" 
-            : "bg-white/80 text-zinc-400 hover:text-rose-500 dark:bg-zinc-800/80"
+            ? "bg-rose-500 text-white shadow-rose-500/30 scale-110" 
+            : "bg-white/70 dark:bg-zinc-900/70 text-zinc-400 hover:text-rose-500 border border-white/20 dark:border-zinc-800/50 hover:scale-110"
         ].join(" ")}
       >
-        <span className={active ? "animate-heart-pop" : ""}>{active ? "❤️" : "🤍"}</span>
+        <svg 
+          className={[
+            "w-6 h-6 transition-transform duration-300",
+            active ? "fill-current scale-110" : "fill-none group-hover:scale-110"
+          ].join(" ")} 
+          viewBox="0 0 24 24" 
+          stroke="currentColor" 
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
       </button>
     );
   }
@@ -54,25 +64,24 @@ export function FavoriteButton({ recipeId, recipeTitle, t, minimal }: FavoriteBu
       aria-label={active ? `Retirer ${recipeTitle} des favoris` : `Ajouter ${recipeTitle} aux favoris`}
       aria-pressed={active}
       className={[
-        "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
-        "border-2 transition-all duration-200",
-        "focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400",
+        "group flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-black transition-all active:scale-95",
         active
-          ? "border-rose-500 bg-rose-500 text-white shadow-rose-200"
-          : "border-rose-300 bg-white text-rose-500 hover:bg-rose-50 dark:bg-zinc-900 dark:border-rose-500 dark:hover:bg-rose-950",
-        "active:scale-90",
+          ? "bg-rose-500 text-white shadow-lg shadow-rose-500/20"
+          : "bg-white dark:bg-zinc-900 text-rose-500 border-2 border-rose-100 dark:border-rose-900/30 hover:border-rose-500"
       ].join(" ")}
     >
-      <span
-        aria-hidden
+      <svg 
         className={[
-          "text-lg transition-transform duration-200",
-          active ? "scale-125" : "scale-100",
-        ].join(" ")}
+          "w-5 h-5 transition-transform duration-300",
+          active ? "fill-current scale-110" : "fill-none group-hover:scale-110"
+        ].join(" ")} 
+        viewBox="0 0 24 24" 
+        stroke="currentColor" 
+        strokeWidth={2.5}
       >
-        {active ? "❤️" : "🤍"}
-      </span>
-      {active ? "Retirer" : "Favoris"}
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+      {active ? "Ajouté" : "Favoris"}
     </button>
   );
 }

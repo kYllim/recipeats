@@ -8,7 +8,13 @@
   "home": {
     "hero": "Découvrez des recettes savoureuses",
     "subtitle": "Partagez, commentez et sauvegardez vos plats préférés",
-    "cta": "Explorer les recettes"
+    "cta": "Explorer les recettes",
+    "featuredTitle": "Les dernières pépites",
+    "featuredSubtitle": "Découvrez les recettes les plus récentes partagées par la communauté.",
+    "statsTitle": "La communauté en chiffres",
+    "recipesCount": "Recettes partagées",
+    "usersCount": "Passionnés",
+    "commentsCount": "Avis publiés"
   },
   "recipes": {
     "title": "Toutes les recettes",

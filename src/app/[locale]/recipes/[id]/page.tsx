@@ -102,93 +102,134 @@ export default async function RecipeDetailPage({
     .filter(Boolean);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col gap-10">
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2 flex-wrap">
-              <span className="text-xs font-semibold uppercase tracking-wider bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300 px-3 py-1 rounded-full">
-                {difficultyLabel}
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-wider bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 px-3 py-1 rounded-full">
-                ⏱ {recipe.prepTime} {t.recipes.minutes}
-              </span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-zinc-50">
-              {recipe.title}
-            </h1>
-            {avgRating > 0 && (
-              <div className="flex items-center gap-2">
-                <StarRating value={avgRating} readonly size="sm" />
-                <span className="text-sm text-zinc-500">
-                  ({recipe.comments.length})
-                </span>
-              </div>
-            )}
-          </div>
-          <FavoriteButton
-            recipeId={recipe.id}
-            recipeTitle={recipe.title}
-            t={t.favorites}
-          />
-        </div>
-        <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
-          {recipe.description}
-        </p>
-      </div>
-      <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-amber-50 dark:bg-amber-900/10 flex items-center justify-center text-6xl shadow-sm">
+    <div className="flex flex-col gap-0 pb-20">
+      {/* Visual Header */}
+      <div className="relative h-[50vh] min-h-[400px] w-full bg-zinc-900">
         {recipe.image ? (
           <Image
             src={recipe.image}
             alt={recipe.title}
             fill
-            className="object-cover"
-            priority // Charge l'image en priorité car elle est au-dessus de la ligne de flottaison
+            className="object-cover opacity-60"
+            priority
           />
         ) : (
-          "🍲"
+          <div className="absolute inset-0 flex items-center justify-center text-8xl opacity-20">🍲</div>
         )}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 dark:from-zinc-950 via-transparent to-transparent" />
+        
+        <div className="absolute inset-0 flex items-end">
+          <div className="max-w-5xl mx-auto w-full px-4 pb-12">
+            <div className="flex flex-col gap-6">
+              <div className="flex gap-2 flex-wrap">
+                <span className="text-xs font-black uppercase tracking-[0.2em] bg-amber-500 text-zinc-950 px-4 py-1.5 rounded-full shadow-lg shadow-amber-500/20">
+                  {difficultyLabel}
+                </span>
+                <span className="text-xs font-black uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md text-white border border-white/20 px-4 py-1.5 rounded-full">
+                  ⏱ {recipe.prepTime} {t.recipes.minutes}
+                </span>
+              </div>
+              
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="flex flex-col gap-3">
+                  <h1 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-50 tracking-tighter">
+                    {recipe.title}
+                  </h1>
+                  {avgRating > 0 && (
+                    <div className="flex items-center gap-3">
+                      <StarRating value={avgRating} readonly size="sm" />
+                      <span className="text-sm font-bold text-zinc-500">
+                        {recipe.comments.length} {t.recipes.commentsCount}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <FavoriteButton
+                    recipeId={recipe.id}
+                    recipeTitle={recipe.title}
+                    t={t.favorites}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <section className="rounded-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-6">
-        <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">
-          🥕 {t.recipes.ingredients}
-        </h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {recipe.ingredients.map((ing: Ingredient) => (
-            <li
-              key={ing.id}
-              className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300"
-            >
-              <span className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
-              <span className="font-medium">{ing.name}</span>
-              <span className="text-zinc-400 ml-auto">
-                {ing.quantity} {ing.unit}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Content Grid */}
+      <div className="max-w-5xl mx-auto w-full px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
+        {/* Left Column: Description & Instructions */}
+        <div className="lg:col-span-8 flex flex-col gap-12">
+          <section className="flex flex-col gap-4">
+            <h2 className="text-2xl font-black text-zinc-900 dark:text-zinc-50 tracking-tight flex items-center gap-2">
+              <span className="w-8 h-1 bg-amber-500 rounded-full" />
+              Description
+            </h2>
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed italic border-l-4 border-zinc-100 dark:border-zinc-800 pl-6 py-2">
+              {recipe.description}
+            </p>
+          </section>
 
-      <section>
-        <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">
-          📋 {t.recipes.instructions}
-        </h2>
-        <ol className="flex flex-col gap-4">
-          {steps.map((step: string, i: number) => (
-            <li key={i} className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-sm">
-                {i + 1}
-              </span>
-              <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed pt-1">
-                {step.replace(/^\d+\.\s*/, "")}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
+          <section className="flex flex-col gap-8">
+            <h2 className="text-2xl font-black text-zinc-900 dark:text-zinc-50 tracking-tight flex items-center gap-2">
+              <span className="w-8 h-1 bg-amber-500 rounded-full" />
+              {t.recipes.instructions}
+            </h2>
+            <ol className="flex flex-col gap-8">
+              {steps.map((step: string, i: number) => (
+                <li key={i} className="group flex gap-6">
+                  <div className="flex-shrink-0">
+                    <span className="flex w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50 font-black flex items-center justify-center text-lg group-hover:bg-amber-500 group-hover:text-white transition-colors shadow-sm">
+                      {i + 1}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-2 pt-1.5">
+                    <p className="text-zinc-700 dark:text-zinc-300 text-lg leading-relaxed">
+                      {step.replace(/^\d+\.\s*/, "")}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
 
-      <CommentList recipeId={recipe.id} locale={locale} t={t.comments} />
+          <hr className="border-zinc-100 dark:border-zinc-800" />
+          
+          <CommentList recipeId={recipe.id} locale={locale} t={t.comments} />
+        </div>
+
+        {/* Right Column: Ingredients (Sidebar-style on desktop) */}
+        <aside className="lg:col-span-4 flex flex-col gap-8">
+          <div className="sticky top-28 p-8 rounded-[2.5rem] bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none">
+            <h2 className="text-xl font-black text-zinc-900 dark:text-zinc-50 mb-8 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </span>
+              {t.recipes.ingredients}
+            </h2>
+            <ul className="flex flex-col gap-4">
+              {recipe.ingredients.map((ing: Ingredient) => (
+                <li
+                  key={ing.id}
+                  className="flex items-center justify-between gap-4 p-3 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors border border-transparent hover:border-zinc-100 dark:hover:border-zinc-700"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" />
+                    <span className="font-bold text-zinc-700 dark:text-zinc-200">{ing.name}</span>
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 text-xs font-black">
+                    {ing.quantity} {ing.unit}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
