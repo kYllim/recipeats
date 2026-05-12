@@ -2,8 +2,16 @@ import { prisma } from "@/lib/prisma";
 import RecipeCard from "@/components/recipes/RecipeCard";
 import type { Locale } from "@/proxy";
 import { Recipe } from "@prisma/client";
+import { getDictionary } from "@/i18n";
 
-export default async function RecipeList({ locale }: { locale: string }) {
+export default async function RecipeList({ 
+    locale, 
+    query, 
+}: { 
+    locale: Locale;
+    query: string;
+}) {
+const t = getDictionary(locale);
 
   
   let recipes: (Recipe & { _count: { comments: number } })[] = [];
@@ -11,6 +19,12 @@ export default async function RecipeList({ locale }: { locale: string }) {
 
   try {
     recipes = await prisma.recipe.findMany({
+      where: {
+        OR: [
+          { title: { contains: query, mode: 'insensitive' } },
+          { description: { contains: query, mode: 'insensitive' } },
+        ],
+      },
       orderBy: { createdAt: "desc" },
       include: { _count: { select: { comments: true } } },
     });
@@ -35,41 +49,22 @@ export default async function RecipeList({ locale }: { locale: string }) {
   if (recipes.length === 0) {
     return (
       <div className="py-24 text-center border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-3xl">
-          <p className="text-zinc-500">Aucune recette trouvée.</p>
+          <p className="text-zinc-500">{t.recipes.noResults}</p>
       </div>
     );
   }
 
   return (
-/*     <main className="min-h-screen bg-white p-8 md:p-16">
-      <div className="max-w-7xl mx-auto">
-
-        <h1 className="text-3xl font-light text-slate-900 mb-12">
-          Nos <span className="italic font-serif">Recettes</span>
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recipes.map((recipe) => (
-            <RecipeCard 
-              key={recipe.id}
-              id={recipe.id}
-              title={recipe.title}
-              description={recipe.description}
-              prepTime={recipe.prepTime}
-              coverImage={recipe.coverImage}
-            />
-          ))}
-        </div>
+    <div className="flex flex-col gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {recipes.map((recipe) => (
+          <RecipeCard 
+            key={recipe.id}
+            recipe={recipe}
+            locale={locale}
+          />
+        ))}
       </div>
-    </main> */
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {recipes.map((recipe) => (
-        <RecipeCard 
-          key={recipe.id}
-          recipe={recipe}
-          locale={locale as Locale}
-        />
-      ))}
     </div>
   );
 }

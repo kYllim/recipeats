@@ -22,7 +22,11 @@
     "noResults": "Aucune recette trouvée",
     "ingredients": "Ingrédients",
     "instructions": "Étapes",
-    "prepTime": "Temps de préparation"
+    "prepTime": "Temps de préparation",
+    "viewDetails": "Voir",
+    "loading": "Chargement des recettes...",
+    "commentsCount": "commentaires"
+
   },
   "comments": {
     "title": "Commentaires",

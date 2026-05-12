@@ -22,7 +22,10 @@
     "noResults": "No recipes found",
     "ingredients": "Ingredients",
     "instructions": "Steps",
-    "prepTime": "Prep time"
+    "prepTime": "Prep time",
+    "viewDetails": "View",
+    "loading": "Loading recipes...",
+    "commentsCount": "comments"
   },
   "comments": {
     "title": "Comments",

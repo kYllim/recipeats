@@ -18,3 +18,11 @@ export const commentSchema = z.object({
 });
 
 export type CommentFormData = z.infer<typeof commentSchema>;
+
+const RecipesSchema = z.object({
+  query: z.string().optional().default(''),
+});
+
+const ParamsSchema = z.object({
+  locale: z.enum(['fr', 'en'])
+});

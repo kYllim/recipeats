@@ -11,50 +11,21 @@ interface RecipeCardProps {
       comments: number;
     };
   };
-  locale: string;
+  locale: Locale;
+  delay?: number;
 }
 
 export default async function RecipeCard({
   recipe,
-  locale
+  locale,
+  delay = 200
 }: RecipeCardProps){
-  const t = await getDictionary(locale as Locale);
+  const t = await getDictionary(locale);
   return (
-/*     <Link href={`/recipes/${id}`} className="">
-    <article className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-      
-      <div className="relative aspect-video w-full bg-slate-50">
-        <Image
-          src={coverImage || "/recipes/placeholder-recipe.png"} 
-          alt={` ${title}`}
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      <div className="p-6">
-        <h3 className="text-xl font-medium text-slate-800">
-          {title}
-        </h3>
-
-        {description && (
-          <p className="text-slate-500 text-sm mt-2 line-clamp-2">
-            {description}
-          </p>
-        )}
-
-        <div className="mt-4 flex items-center text-[10px] font-bold text-slate-400 uppercase">
-          <span className="bg-slate-50 px-2 py-1 rounded">
-            {prepTime ? `${prepTime} MIN` : "RAPIDE"}
-          </span>
-        </div>
-      </div>
-    </article>
-    </Link> */
             <div
               key={recipe.id}
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-xl hover:-translate-y-1 animate-card-in"
-              // style={{ animationDelay: `${i * 50}ms` }}
+              style={{ animationDelay: `${delay}ms` }}
             >
               <FavoriteButton 
                 recipeId={recipe.id} 
@@ -99,16 +70,12 @@ export default async function RecipeCard({
                 </p>
                 
                 <div className="mt-2 pt-4 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-xs font-medium text-zinc-400">
-                  <span>{recipe._count?.comments || 0} 
-                    {/* {t.recipes.comments || 'commentaires'} */}
+                  <span>{recipe._count?.comments || 0} {t.recipes.commentsCount}
                     </span>
-                  <span className="text-amber-500 group-hover:translate-x-1 transition-transform">Voir →</span>
+                  <span className="text-amber-500 group-hover:translate-x-1 transition-transform">{t.recipes.viewDetails} →</span>
                 </div>
               </div>
             </Link>
         </div>
-
-    
-
   );
 }
