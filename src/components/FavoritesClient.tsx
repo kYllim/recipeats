@@ -6,6 +6,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { getRecipesByIds } from "@/actions/recipes";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/proxy";
+import Image from "next/image";
 
 interface RecipeData {
   id: string;
@@ -112,9 +113,11 @@ export function FavoritesClient({ locale, t, navT }: FavoritesClientProps) {
               >
                 <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-amber-50 dark:bg-amber-900/20">
                   {recipe.image ? (
-                    <img
+                    <Image
                       src={recipe.image}
                       alt={recipe.title}
+                      width={80}
+                      height={80}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (

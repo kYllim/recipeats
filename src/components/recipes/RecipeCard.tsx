@@ -39,9 +39,9 @@ export default async function RecipeCard({
                 className="flex flex-col h-full"
               >
                 <div className="relative aspect-[4/3] bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-4xl overflow-hidden">
-                  {recipe.coverImage ? (
+                  {recipe.image ? (
                     <Image 
-                      src={recipe.coverImage || "/recipes/placeholder-recipe.png"} 
+                      src={recipe.image || "/recipes/placeholder-recipe.png"} 
                       alt={recipe.title} 
                       fill
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 

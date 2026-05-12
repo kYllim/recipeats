@@ -22,7 +22,7 @@ export default async function HomePage() {
               title={recipe.title}
               description={recipe.description}
               prepTime={recipe.prepTime}
-              coverImage={recipe.coverImage}
+              image={recipe.image}
             />
           ))}
         </div>

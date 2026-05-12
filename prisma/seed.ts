@@ -24,7 +24,7 @@ async function main() {
       title: "Pâtes Carbonara",
       description: "La véritable recette italienne au pecorino et guanciale.",
       prepTime: 15,
-      coverImage: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Cuire les pâtes... 2. Mélanger œufs et fromage... 3. Assembler avec le guanciale.",
       ingredients: {
         create: [
@@ -39,7 +39,7 @@ async function main() {
       title: "Risotto aux Champignons",
       description: "Un classique crémeux aux saveurs de sous-bois.",
       prepTime: 35,
-      coverImage: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Nacrer le riz... 2. Verser le bouillon louche par louche... 3. Lier au parmesan.",
       ingredients: {
         create: [
@@ -54,7 +54,7 @@ async function main() {
       title: "Quiche Lorraine",
       description: "Le grand classique de la cuisine française, onctueux et croustillant.",
       prepTime: 45,
-      coverImage: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Préparer l'appareil (œufs/crème)... 2. Garnir la pâte... 3. Enfourner à 180°C.",
       ingredients: {
         create: [
@@ -69,7 +69,7 @@ async function main() {
       title: "Poulet à la Moambe",
       description: "Plat national congolais onctueux à base de noix de palme.",
       prepTime: 60,
-      coverImage: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Faire dorer le poulet... 2. Mijoter dans la sauce moambe... 3. Servir avec du riz ou fufu.",
       ingredients: {
         create: [
@@ -84,7 +84,7 @@ async function main() {
       title: "Liboke de Poisson",
       description: "Poisson mariné et cuit en papillote dans des feuilles de bananier.",
       prepTime: 40,
-      coverImage: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Mariner le poisson... 2. Emballer hermétiquement... 3. Cuire à la vapeur ou braise.",
       ingredients: {
         create: [
@@ -99,7 +99,7 @@ async function main() {
       title: "Bokit Poulet Boucané",
       description: "Le célèbre sandwich antillais frit, garni de poulet fumé.",
       prepTime: 30,
-      coverImage: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Frire la pâte à bokit... 2. Effilocher le poulet... 3. Ajouter la sauce chien.",
       ingredients: {
         create: [
@@ -113,7 +113,7 @@ async function main() {
       title: "Colombo de Porc",
       description: "Un ragoût épicé emblématique des Antilles aux saveurs douces.",
       prepTime: 90,
-      coverImage: "https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Mariner la viande au citron... 2. Faire roussir avec les épices... 3. Mijoter.",
       ingredients: {
         create: [
@@ -128,7 +128,7 @@ async function main() {
       title: "Couscous au Poisson",
       description: "Spécialité tunisienne parfumée au cumin et au piment.",
       prepTime: 70,
-      //coverImage: "https://images.unsplash.com/photo-1585937421612-70a0f2455f75?q=80&w=1000&auto=format&fit=crop",
+      //image: "https://images.unsplash.com/photo-1585937421612-70a0f2455f75?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Préparer la graine... 2. Cuire le poisson dans le bouillon... 3. Servir chaud.",
       ingredients: {
         create: [
@@ -143,7 +143,7 @@ async function main() {
       title: "Ojja aux Merguez",
       description: "Une poêlée de tomates, poivrons et œufs, pimentée à l'harissa.",
       prepTime: 20,
-      coverImage: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=1000&auto=format&fit=crop",
       instructions: "1. Griller les merguez... 2. Faire réduire la sauce tomate... 3. Pocher les œufs.",
       ingredients: {
         create: [

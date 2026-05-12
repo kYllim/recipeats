@@ -137,9 +137,9 @@ export default async function RecipeDetailPage({
         </p>
       </div>
       <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-amber-50 dark:bg-amber-900/10 flex items-center justify-center text-6xl shadow-sm">
-        {recipe.coverImage ? (
+        {recipe.image ? (
           <Image
-            src={recipe.coverImage}
+            src={recipe.image}
             alt={recipe.title}
             fill
             className="object-cover"

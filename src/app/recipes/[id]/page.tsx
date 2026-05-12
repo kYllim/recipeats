@@ -11,10 +11,10 @@ export default async function RecipePage({ params }: { params: Promise<{ id: str
 
   return (
     <main className="min-h-screen bg-white ">
-      {recipe?.coverImage && (
+      {recipe?.image && (
           <div className="relative h-[45vh] w-full bg-slate-50">
             <Image 
-              src={recipe.coverImage || "/recipes/placeholder-recipe.png"} 
+              src={recipe.image || "/recipes/placeholder-recipe.png"} 
               alt={recipe.title} 
               fill 
               className="object-cover"
@@ -44,10 +44,10 @@ export default async function RecipePage({ params }: { params: Promise<{ id: str
             </div>
           </div>
 
-          {recipe?.coverImage && (
+          {recipe?.image && (
           <div className="relative h-[45vh] w-full bg-slate-50 mb-6 ">
             <Image 
-              src={recipe.coverImage || "/recipes/placeholder-recipe.png"} 
+              src={recipe.image || "/recipes/placeholder-recipe.png"} 
               alt={recipe.title} 
               fill 
               className="object-cover rounded-2xl"

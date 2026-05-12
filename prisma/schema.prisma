@@ -20,7 +20,6 @@ model Recipe {
   prepTime     Int
   difficulty   String       @default("medium") // "easy" | "medium" | "hard"
   image        String?
-  coverImage   String?
   createdAt    DateTime     @default(now())
   ingredients  Ingredient[]
   comments     Comment[]
