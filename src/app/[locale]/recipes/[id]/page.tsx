@@ -3,12 +3,13 @@ import { Ingredient, Comment } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
 import { getDictionary } from "@/i18n";
-import { hasLocale } from "@/proxy";
+import { hasLocale, Locale } from "@/proxy";
 import { prisma } from "@/lib/prisma";
 import { CommentList } from "@/components/CommentList"; 
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { StarRating } from "@/components/StarRating";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 async function getRecipe(id: string) {
   return prisma.recipe.findUnique({
@@ -43,7 +44,7 @@ export async function generateMetadata({
 export default async function RecipeDetailPage({
   params,
 }: {
-  params: Promise<{ locale: string; id: string }>;
+  params: Promise<{ locale: Locale; id: string }>;
 }) {
   const resolvedParams = await params;
   const locale = resolvedParams?.locale;
@@ -134,6 +135,19 @@ export default async function RecipeDetailPage({
         <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
           {recipe.description}
         </p>
+      </div>
+      <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-amber-50 dark:bg-amber-900/10 flex items-center justify-center text-6xl shadow-sm">
+        {recipe.coverImage ? (
+          <Image
+            src={recipe.coverImage}
+            alt={recipe.title}
+            fill
+            className="object-cover"
+            priority // Charge l'image en priorité car elle est au-dessus de la ligne de flottaison
+          />
+        ) : (
+          "🍲"
+        )}
       </div>
 
       <section className="rounded-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-6">
