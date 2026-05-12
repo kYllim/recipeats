@@ -25,7 +25,7 @@
     "prepTime": "Prep time",
     "viewDetails": "View",
     "loading": "Loading recipes...",
-    "commentsCount": "comments"
+    "commentsCount": "comment(s)"
   },
   "comments": {
     "title": "Comments",
