@@ -41,4 +41,5 @@ export async function getComments(recipeId: string) {
     where: { recipeId },
     orderBy: { createdAt: "desc" },
   });
+
 }
