@@ -73,5 +73,52 @@
     "favoritesDescription": "Retrouvez toutes vos recettes favorites sauvegardées sur RecipEats.",
     "404Title": "Page introuvable — RecipEats",
     "500Title": "Erreur — RecipEats"
+  },
+  "addRecipe": {
+    "title": "Ajouter une recette",
+    "subtitle": "Partagez votre création avec la communauté RecipEats.",
+    "fields": {
+      "title": "Titre",
+      "titlePlaceholder": "Ex : Pâtes Carbonara",
+      "description": "Description",
+      "descriptionPlaceholder": "Décrivez votre plat en quelques mots...",
+      "prepTime": "Temps de préparation (min)",
+      "difficulty": "Difficulté",
+      "instructions": "Étapes de préparation",
+      "instructionsPlaceholder": "1. Faire bouillir l'eau...\n2. Cuire les pâtes...",
+      "image": "Image (optionnel)",
+      "ingredients": "Ingrédients",
+      "ingredientName": "Nom",
+      "ingredientQuantity": "Qté",
+      "ingredientUnit": "Unité"
+    },
+    "difficulty": {
+      "easy": "Facile",
+      "medium": "Moyen",
+      "hard": "Difficile"
+    },
+    "actions": {
+      "addIngredient": "+ Ajouter un ingrédient",
+      "removeIngredient": "Retirer",
+      "submit": "Créer la recette",
+      "submitting": "Création en cours..."
+    },
+    "validation": {
+      "titleMin": "Le titre doit faire au moins 3 caractères",
+      "titleMax": "Le titre ne peut pas dépasser 100 caractères",
+      "descriptionMin": "La description doit faire au moins 10 caractères",
+      "descriptionMax": "La description ne peut pas dépasser 500 caractères",
+      "prepTimeInvalid": "Entrez un temps en minutes valide",
+      "instructionsMin": "Les étapes doivent faire au moins 10 caractères",
+      "ingredientsMin": "Ajoutez au moins un ingrédient",
+      "ingredientName": "Nom requis",
+      "ingredientQuantity": "Quantité positive requise",
+      "ingredientUnit": "Unité requise",
+      "imageType": "Format invalide (JPG, PNG, WEBP)",
+      "imageSize": "L'image doit faire moins de 5 Mo"
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
   }
 }

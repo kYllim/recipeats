@@ -73,5 +73,52 @@
     "favoritesDescription": "Find all your saved favorite recipes on RecipEats.",
     "404Title": "Page not found — RecipEats",
     "500Title": "Error — RecipEats"
+  },
+  "addRecipe": {
+    "title": "Add a recipe",
+    "subtitle": "Share your creation with the RecipEats community.",
+    "fields": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Carbonara Pasta",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe your dish in a few words...",
+      "prepTime": "Prep time (min)",
+      "difficulty": "Difficulty",
+      "instructions": "Cooking steps",
+      "instructionsPlaceholder": "1. Boil water...\n2. Cook the pasta...",
+      "image": "Image (optional)",
+      "ingredients": "Ingredients",
+      "ingredientName": "Name",
+      "ingredientQuantity": "Qty",
+      "ingredientUnit": "Unit"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "actions": {
+      "addIngredient": "+ Add an ingredient",
+      "removeIngredient": "Remove",
+      "submit": "Create recipe",
+      "submitting": "Creating..."
+    },
+    "validation": {
+      "titleMin": "Title must be at least 3 characters",
+      "titleMax": "Title cannot exceed 100 characters",
+      "descriptionMin": "Description must be at least 10 characters",
+      "descriptionMax": "Description cannot exceed 500 characters",
+      "prepTimeInvalid": "Please enter a valid time in minutes",
+      "instructionsMin": "Steps must be at least 10 characters",
+      "ingredientsMin": "Add at least one ingredient",
+      "ingredientName": "Name required",
+      "ingredientQuantity": "Positive quantity required",
+      "ingredientUnit": "Unit required",
+      "imageType": "Invalid format (JPG, PNG, WEBP)",
+      "imageSize": "Image must be under 5 MB"
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again."
+    }
   }
 }
